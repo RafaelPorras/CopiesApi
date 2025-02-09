@@ -13,6 +13,9 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/copies','CopyController@index');
+$router->post('/copies','CopyController@store');
+$router->get('/copies/{copy}','CopyController@show');
+$router->put('/copies/{copy}','CopyController@update');
+$router->patch('/copies/{copy}','CopyController@update');
+$router->delete('/copies/{copy}','CopyController@destroy');
